@@ -1,4 +1,4 @@
-exports.allAcess = (req, res) => {
+exports.allAccess = (req, res) => {
     res.status(200).send("Public content");
 };
 
