@@ -20,8 +20,8 @@ const db = require(".app/models");
 const Role = db.role;
 
 db.mongoose
-    .connect(`mongodb://${dbconfig.HOST}:${dbconfig.PORT}/${dbconfig.DB}`, {
-        useNewUrlParser: true,
+    .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
+        useNewUrlParser: true,  
         useUnifiedTopology: true
     })
     .then(() => {
@@ -33,7 +33,7 @@ db.mongoose
         process.exit();
     });
 
-//inital() helps us create 3 rows in roles collection    
+//inital() helps us create 2 rows in roles collection    
 
 function initial(){
     Role.estimatedDocumentCount((err, count) => {
