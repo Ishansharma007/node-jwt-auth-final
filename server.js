@@ -16,10 +16,13 @@ app.use(express.urlencoded({extended: true}));
 
 app.use(express.json());
 
-const db = require(".app/models");
+const db = require("./app/models");
 const Role = db.role;
+
 require('./app/routes/auth.routes')(app);
 require('./app/routes/user.routes')(app);
+
+const dbConfig = require("./app/config/db.config");
 
 db.mongoose
     .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
