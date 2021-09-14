@@ -6,7 +6,7 @@ checkDuplicateUsernameOrEmail = (req, res, next) => {
   // Username
   User.findOne({
     username: req.body.username
-  }).exec((err, foundUser) => {
+  }).exec((err, foundUser) => {   //Mongoose will not execute a query until then or exec has been called upon it
     if (err) {
       res.status(500).send({ message: err });
       return;

@@ -31,7 +31,8 @@ isAdmin = (req, res, next) => {
 
         Role.find(
             {
-                _id: { $in: User.roles }
+                _id: { $in: User.roles } //The $in operator takes an array as its value. And $in operator, 
+                                         //in turn, is assigned to the field according to which the filtration is to be done
             },
             (err, roles) => {
                 if(err){
